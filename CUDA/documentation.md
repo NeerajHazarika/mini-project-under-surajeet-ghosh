@@ -20,3 +20,32 @@ int main() {
     return 0;
 }
 ```
+
+# Workflow of CUDA programs
+
+1. Allocate host memory and initialized host data
+2. Allocate device memory
+3. Transfer input data from host to device memory
+4. Execute kernels
+5. Transfer output from device memory to host
+
+### 2. Allocate Device Memory
+
+CUDA provides several functions for allocating device memory. The most common ones are cudaMalloc() and cudaFree(). The syntax for both functions are as follow
+
+```
+cudaMalloc(void **devPtr, size_t count);
+cudaFree(void *devPtr);
+```
+
+cudaMalloc() allocates memory of size count in the device memory and updates the device pointer devPtr to the allocated memory. cudaFree() deallocates a region of the device memory where the device pointer devPtr points to. They are comparable to malloc() and free() in C, respectively
+
+### 3. Transfer input data from host to device memory
+
+Transfering data between host and device memory can be done through cudaMemcpy function, which is similar to memcpy in C. The syntax of cudaMemcpy is as follow
+```
+cudaMemcpy(void *dst, void *src, size_t count, cudaMemcpyKind kind)
+```
+The function copy a memory of size count from src to dst. kind indicates the direction. For typical usage, the value of kind is either cudaMemcpyHostToDevice or cudaMemcpyDeviceToHost. There are other possible values but we will not touch them in this tutorial.
+
+
