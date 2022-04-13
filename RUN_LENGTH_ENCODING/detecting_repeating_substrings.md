@@ -64,5 +64,5 @@ for n in range(1,N+1):
 
 print(Q[N])
 ```
-
+- INPUT string : `AAABBAAABBCECE` (14 characters), RLE string : `2AAABB2CE` (9 characters)
 - source : [link](https://stackoverflow.com/questions/2261318/finding-the-minimum-length-rle)
