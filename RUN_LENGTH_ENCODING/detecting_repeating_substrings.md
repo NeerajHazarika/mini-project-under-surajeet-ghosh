@@ -18,6 +18,7 @@ def repeats(string):
 # Dynamic Programming Approach 
 
 - This algorithm only prints out the number of characters it will take to encode the entire string using RLE while detecting repeating substrings.
+- INPUT STRING : `AAABBAAABBCECE`
 
 ```
 import sys
