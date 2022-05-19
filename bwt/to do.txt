@@ -1,0 +1,4 @@
+- variants
+- compression percentage
+- space and time complexity
+- real life application
